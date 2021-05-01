@@ -19,13 +19,6 @@ slr.fit(X_train, y_train)
 y_train_pred = slr.predict(X_train)
 y_test_pred = slr.predict(X_test)
 
-# 多项式回归模型构造及训练
-spr = LinearRegression()
-quadratic = PolynomialFeatures()
-X_train_quad = quadratic.fit_transform(X_train)
-spr.fit(X_train_quad, y_train)
-y_train_pred_quad = spr.predict(X_train_quad)
-y_test_pred_quad = spr.predict(quadratic.fit_transform(X_test))
 
 # 残差评估方法
 plt.scatter(y_train_pred, y_train_pred - y_train,
